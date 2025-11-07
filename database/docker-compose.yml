@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: econverto_db
+    restart: always
+    environment:
+      POSTGRES_USER: econverto
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: econverto
+    ports:
+      - "5432:5432"
+    volumes:
+      - econverto_data:/var/lib/postgresql/data
+      - ./1-schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+volumes:
+  econverto_data:
