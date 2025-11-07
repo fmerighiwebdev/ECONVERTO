@@ -12,5 +12,7 @@ services:
     volumes:
       - econverto_data:/var/lib/postgresql/data
       - ./1-schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./2-data.sql:/docker-entrypoint-initdb.d/2-data.sql
+      - ./data:/data
 volumes:
   econverto_data:
