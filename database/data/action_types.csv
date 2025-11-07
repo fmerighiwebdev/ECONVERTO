@@ -1,0 +1,11 @@
+id,name,description,category,unit,scoring_rule,base_points
+1,sustainable_commute,Chilometraggio con mezzi sostenibili,individual,km,more_is_better,2
+2,idle_minutes,Minuti di inattività computer,individual,minutes,less_is_better,1
+3,daily_prints,Numero stampe giornaliere,individual,count,less_is_better,2
+4,meal_co2,CO2 del menu scelto,individual,kg_co2,less_is_better,3
+5,vending_products,Prodotti comprati alle macchinette,individual,count,less_is_better,2
+6,plants_added,Piante portate in ufficio,individual,count,more_is_better,10
+7,eco_tip_shared,Eco-tip pubblicati,individual,count,more_is_better,15
+8,office_energy,Consumo elettrico team,team,kwh,less_is_better,3
+9,team_prints,Numero stampe team,team,count,less_is_better,2
+10,sustainability_event,Partecipazione eventi green,team,count,more_is_better,10
