@@ -1,0 +1,38 @@
+services:
+  web:
+    build:
+      context: .          # usa la root (dove c’è il Dockerfile)
+      dockerfile: Dockerfile
+    container_name: econverto_web
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://econverto:secretpassword@db:5432/econverto
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+
+  db:
+    image: postgres:16
+    container_name: econverto_db
+    restart: always
+    environment:
+      POSTGRES_USER: econverto
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: econverto
+    ports:
+      - "5432:5432"
+    volumes:
+      - econverto_data:/var/lib/postgresql/data
+      - ./database/1-schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./database/2-data.sql:/docker-entrypoint-initdb.d/2-data.sql
+      - ./database/data:/data
+
+volumes:
+  econverto_data:
