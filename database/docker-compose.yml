@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       POSTGRES_USER: econverto
-      POSTGRES_PASSWORD: aaaaa
+      POSTGRES_PASSWORD: secretpassword
       POSTGRES_DB: econverto
     ports:
       - "5432:5432"
