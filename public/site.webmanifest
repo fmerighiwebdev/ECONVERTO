@@ -1,6 +1,6 @@
 {
-  "name": "ECONVERTO",
-  "short_name": "ECONVERTO",
+  "name": "EKONVERTO",
+  "short_name": "EKONVERTO",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#32A51B",
+  "theme_color": "#198978",
   "background_color": "#ffffff",
   "display": "standalone"
 }
